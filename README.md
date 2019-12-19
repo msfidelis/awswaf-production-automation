@@ -1,6 +1,6 @@
 # Complete AWS WAF Automation
 
-![waf](".github/logo.png")
+![waf](.github/logo.png)
 
 ## Features
 
