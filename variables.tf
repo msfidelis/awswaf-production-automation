@@ -23,3 +23,20 @@ variable "blacklist_ips" {
         }
     ]
 }
+
+variable "body_regex" {
+    type = list
+    default = []
+}
+
+variable "header_regex" {
+    type = list
+    default = []
+}
+
+variable "uri_regex" {
+    type = list(string)
+    default = [
+        "/block/me"
+    ]
+}

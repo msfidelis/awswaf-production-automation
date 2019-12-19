@@ -19,6 +19,12 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
         rule_id  = aws_wafregional_rule.ip_blacklist_rule.id
     }
 
+    rule {
+        action { type = "BLOCK" }
+        priority = 2
+        rule_id  = aws_wafregional_rule.regex_uri.id
+    }
+
     // rule {
     //     action { type = "BLOCK" }
     //     priority = 2
