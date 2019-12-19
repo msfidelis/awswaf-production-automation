@@ -1,5 +1,7 @@
 # Complete AWS WAF Automation
 
+![waf](".github/logo.png")
+
 ## Features
 
 *   Blacklist IP's :white_check_mark:
