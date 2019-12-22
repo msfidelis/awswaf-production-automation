@@ -15,6 +15,7 @@
 
 ## Features
 
+*   Feature Flag :x:
 *   Blacklist IP's :white_check_mark:
 *   SQL Injection protection :white_check_mark:
 *   XSS protection :white_check_mark:
