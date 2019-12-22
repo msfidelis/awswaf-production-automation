@@ -13,7 +13,7 @@
 
 ![waf](.github/logo.png)
 
-## Features
+## Features (Roadmap)
 
 *   Feature Flag :x:
 *   Blacklist IP's :white_check_mark:
