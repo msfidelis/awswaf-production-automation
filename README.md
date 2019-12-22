@@ -1,4 +1,4 @@
-# Complete AWS WAF Automation
+# Complete AWS WAF (Web Application Firewall) Automation with Terraform
 
 ![waf](.github/logo.png)
 
