@@ -20,7 +20,7 @@
 *   SQL Injection protection :white_check_mark:
 *   XSS protection :white_check_mark:
 *   DDoS protection (IP Rated) :x:
-*   Regex pattern for BODY :x:
+*   Regex pattern for BODY :white_check_mark:
 *   Regex pattern for URI :white_check_mark:
 *   Regex pattern for HEADER :x:
 *   Monitoring with Kinesis and Elasticsearch and Kibana :x:

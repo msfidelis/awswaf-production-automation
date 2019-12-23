@@ -42,7 +42,7 @@ variable "enable_body_regex" {
 
 variable "body_regex" {
     type = list
-    default = ["BLOCKME"]
+    default = ["(?i)BODY_BLOCK_ME"]
 }
 
 ##################################
@@ -55,7 +55,7 @@ variable "enable_header_regex" {
 
 variable "header_regex" {
     type = list
-    default = ["blockme"]
+    default = ["(?i)blockme"]
 }
 
 ##################################
@@ -69,6 +69,6 @@ variable "enable_uri_regex" {
 variable "uri_regex" {
     type = list(string)
     default = [
-        "/block/me"
+        "(?i)/block/me",
     ]
 }

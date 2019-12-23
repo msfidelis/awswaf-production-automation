@@ -25,6 +25,12 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
         rule_id  = aws_wafregional_rule.regex_uri.id
     }
 
+    rule {
+        action { type = "BLOCK" }
+        priority = 3
+        rule_id  = aws_wafregional_rule.regex_body.id
+    }
+
     // rule {
     //     action { type = "BLOCK" }
     //     priority = 2
@@ -33,13 +39,13 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
 
     rule {
         action { type = "BLOCK" }
-        priority = 3
+        priority = 4
         rule_id  = aws_wafregional_rule.sql_injection_rule.id
     }
 
     rule {
         action { type = "BLOCK" }
-        priority = 4
+        priority = 5
         rule_id  = aws_wafregional_rule.xss_rule.id
     }
 
