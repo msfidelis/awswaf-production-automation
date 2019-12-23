@@ -9,9 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
+    - name: Docker version
       run: docker version
-    - name: Run a multi-line script
+    - name: Terraform 0.12.0 compatibility
       run: |
+        rm -rf .terraform terraform.tfstate*;
         docker version
-        curl ifconfig.co
+        docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.0 init
+        docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.0 validate
