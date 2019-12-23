@@ -46,3 +46,9 @@ jobs:
         docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.13 version
         docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.13 init
         docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.13 validate
+
+    - name: Terraform 0.12.14 compatibility
+      run: |
+        docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.14 version
+        docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.14 init
+        docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.14 validate
