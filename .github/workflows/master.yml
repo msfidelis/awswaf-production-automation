@@ -1,4 +1,4 @@
-name: CI
+name: Terraform Compatibility
 
 on: [push]
 
@@ -13,7 +13,16 @@ jobs:
       run: docker version
     - name: Terraform 0.12.0 compatibility
       run: |
-        rm -rf .terraform terraform.tfstate*;
-        docker version
+        rm -rf .terraform terraform.tfstate*;,
+        docker version,
+        docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.0 version
         docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.0 init
         docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.0 validate
+
+      - name: Terraform 0.12.7 compatibility
+        run: |
+          rm -rf .terraform terraform.tfstate*;
+          docker version
+          docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.7 version
+          docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.7 init
+          docker run -t --rm -v $(pwd):/app/ -w /app/ hashicorp/terraform:0.12.7 validate
