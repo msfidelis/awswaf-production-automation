@@ -10,6 +10,14 @@ variable "request_threshold"{
     default = 1000
 }
 
+##################################
+####        Blacklist IP's    ####
+##################################
+
+variable "enable_blacklist_rule" {
+    default = true
+}
+
 variable "blacklist_ips" {
     type = list
     default = [
@@ -24,14 +32,38 @@ variable "blacklist_ips" {
     ]
 }
 
+##################################
+####  Regex Pattern on Body   ####
+##################################
+
+variable "enable_body_regex" {
+    default = true
+}
+
 variable "body_regex" {
     type = list
-    default = []
+    default = ["BLOCKME"]
+}
+
+##################################
+#### Regex Pattern on Header  ####
+##################################
+
+variable "enable_header_regex" {
+    default = true
 }
 
 variable "header_regex" {
     type = list
-    default = []
+    default = ["blockme"]
+}
+
+##################################
+####    Regex Pattern on URI  ####
+##################################
+
+variable "enable_uri_regex" {
+    default = true
 }
 
 variable "uri_regex" {

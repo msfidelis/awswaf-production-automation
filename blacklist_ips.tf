@@ -1,4 +1,5 @@
 resource "aws_wafregional_ipset" "ip_blacklist" {
+
     name  = "${var.waf_name}-ip-blacklist"
 
     dynamic "ip_set_descriptor" {
