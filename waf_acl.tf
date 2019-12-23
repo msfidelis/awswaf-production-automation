@@ -49,4 +49,16 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
         rule_id  = aws_wafregional_rule.xss_rule.id
     }
 
+    rule {
+        action { type = "BLOCK" }
+        priority = 6
+        rule_id  = aws_wafregional_rule.generic_insecuire_rules_qs.id
+    }
+
+    rule {
+        action { type = "BLOCK" }
+        priority = 7
+        rule_id  = aws_wafregional_rule.generic_insecuire_rules_uri.id
+    }
+
 }
