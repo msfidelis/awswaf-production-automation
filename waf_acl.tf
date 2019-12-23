@@ -31,12 +31,6 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
         rule_id  = aws_wafregional_rule.regex_body.id
     }
 
-    // rule {
-    //     action { type = "BLOCK" }
-    //     priority = 2
-    //     rule_id  = "${aws_wafregional_rate_based_rule.ddos_ip_rule.id}"
-    // }
-
     rule {
         action { type = "BLOCK" }
         priority = 4
@@ -60,5 +54,12 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
         priority = 7
         rule_id  = aws_wafregional_rule.generic_insecuire_rules_uri.id
     }
+
+
+    // rule {
+    //     action { type = "BLOCK" }
+    //     priority = 2
+    //     rule_id  = "${aws_wafregional_rate_based_rule.ddos_ip_rule.id}"
+    // }
 
 }
