@@ -1,4 +1,4 @@
-# Complete AWS WAF (Web Application Firewall) Automation with Terraform (Regional)
+# Complete AWS WAF (Web Application Firewall) Automation with Terraform (Regional / Global)
 
 <p>
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
@@ -16,6 +16,7 @@
 ## Features (Roadmap)
 
 *   Feature Flag :x:
+*   Global Mode Rules Replication from Regional Rules (For Cloudfront)
 *   Blacklist IP's :white_check_mark:
 *   SQL Injection protection :white_check_mark:
 *   XSS protection :white_check_mark:
