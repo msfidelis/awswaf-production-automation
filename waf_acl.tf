@@ -48,10 +48,11 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
     }
 
 
-    // rule {
-    //     action { type = "BLOCK" }
-    //     priority = 2
-    //     rule_id  = "${aws_wafregional_rate_based_rule.ddos_ip_rule.id}"
-    // }
+    rule {
+        action { type = "BLOCK" }
+        priority = 8
+        rule_id  = aws_wafregional_rate_based_rule.ddos_ip_rule.id
+        type     = "RATE_BASED"
+    }
 
 }
