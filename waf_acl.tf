@@ -1,13 +1,5 @@
 resource "aws_wafregional_web_acl" "WAFWebACL" {
-
-    depends_on  = [
-        aws_wafregional_rule.ip_blacklist_rule,
-        aws_wafregional_rule.sql_injection_rule,
-        aws_wafregional_rule.xss_rule,
-        aws_wafregional_rate_based_rule.ddos_ip_rule
-    ]
-
-    name        = "${var.waf_name}-web-acl"
+    name        = format("%s-web-acl", var.waf_name)
 
     metric_name = "SecurityAutomationsMaliciousRequesters"
 

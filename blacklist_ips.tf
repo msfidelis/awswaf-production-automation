@@ -1,6 +1,6 @@
 resource "aws_wafregional_ipset" "ip_blacklist" {
 
-    name  = "${var.waf_name}-ip-blacklist"
+    name  = format("%s-ip-blacklist", var.waf_name)
 
     dynamic "ip_set_descriptor" {
         for_each = var.blacklist_ips
@@ -12,13 +12,13 @@ resource "aws_wafregional_ipset" "ip_blacklist" {
 }
 
 resource "aws_wafregional_rule" "ip_blacklist_rule" {
-    depends_on  = [ aws_wafregional_ipset.ip_blacklist ]
-    name        = "${var.waf_name}-ip-blacklist-rule"
+
+    name        = format("%s-ip-blacklist-rule", var.waf_name)
     metric_name = "SecurityAutomationsBlacklistRule"
 
     predicate {
         type    = "IPMatch"
-        data_id = "${aws_wafregional_ipset.ip_blacklist.id}"
+        data_id = aws_wafregional_ipset.ip_blacklist.id
         negated = false
     }
 }

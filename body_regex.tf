@@ -1,10 +1,10 @@
 resource "aws_wafregional_regex_pattern_set" "body" {
-    name                  = "${var.waf_name}-body-regex"
+    name                  = format("%s-body-regex", var.waf_name)
     regex_pattern_strings = var.body_regex
 }
 
 resource "aws_wafregional_regex_match_set" "regex_body" {
-    name = "${var.waf_name}-body-regex"
+    name = format("%s-body-regex", var.waf_name)
 
     regex_match_tuple {
         field_to_match {
@@ -16,7 +16,7 @@ resource "aws_wafregional_regex_match_set" "regex_body" {
 }
 
 resource "aws_wafregional_rule" "regex_body" {
-  name        = "${var.waf_name}-regex-body"
+  name        = format("%s-regex-body", var.waf_name)
   metric_name = "WAFMetricRegexBody"
 
   predicate {
