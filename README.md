@@ -1,4 +1,4 @@
-# Complete AWS WAF (Web Application Firewall) Automation with Terraform
+# Complete AWS WAF (Web Application Firewall) Automation with Terraform (Regional)
 
 <p>
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
@@ -19,9 +19,9 @@
 *   Blacklist IP's :white_check_mark:
 *   SQL Injection protection :white_check_mark:
 *   XSS protection :white_check_mark:
-*   DDoS protection (IP Rated) :x:
+*   DDoS protection (IP Rated) :white_check_mark:
 *   Generic insecure patterns for Querystrings :white_check_mark:
-*   Generic insecure patterns for URI :x:
+*   Generic insecure patterns for URI :white_check_mark:
 *   Generic insecure patterns for BODY :x:
 *   Regex pattern for BODY :white_check_mark:
 *   Regex pattern for URI :white_check_mark:
