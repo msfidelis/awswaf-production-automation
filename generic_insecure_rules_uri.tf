@@ -1,5 +1,5 @@
 resource "aws_wafregional_byte_match_set" "insecure_params_uri" {
-  name = "${var.waf_name}-generic-insecure-params"
+  name = format("%s-generic-insecure-params", var.waf_name)
 
   byte_match_tuples {
     text_transformation   = "URL_DECODE"
@@ -104,11 +104,11 @@ resource "aws_wafregional_byte_match_set" "insecure_params_uri" {
 }
 
 resource "aws_wafregional_rule" "generic_insecuire_rules_uri" {
-  name        = "${var.waf_name}-generic-insecure-rules-querystring"
+  name        = format("%s-generic-insecure-rules-querystring", var.waf_name)
   metric_name = "GenericInsecurureParamsQueryString"
 
   predicate {
-    data_id = "${aws_wafregional_byte_match_set.insecure_params_uri.id}"
+    data_id = aws_wafregional_byte_match_set.insecure_params_uri.id
     negated = false
     type    = "ByteMatch"
   }

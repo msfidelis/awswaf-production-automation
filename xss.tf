@@ -1,6 +1,6 @@
 resource "aws_wafregional_xss_match_set" "xss" {
 
-  name  = "${var.waf_name}-xss"
+  name  = format("%s-xss", var.waf_name)
 
   xss_match_tuple {
     field_to_match {
@@ -70,14 +70,12 @@ resource "aws_wafregional_xss_match_set" "xss" {
 }
 
 resource "aws_wafregional_rule" "xss_rule" {
-
-  depends_on  = ["aws_wafregional_xss_match_set.xss"]
-  name        = "${var.waf_name}-xss-rule"
+  name        = format("%s-xss-rule", var.waf_name)
   metric_name = "SecurityAutomationsXssRule"
 
   predicate {
     type    = "XssMatch"
-    data_id = "${aws_wafregional_xss_match_set.xss.id}"
+    data_id = aws_wafregional_xss_match_set.xss.id
     negated = false
   }
 }

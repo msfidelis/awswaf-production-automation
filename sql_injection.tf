@@ -1,6 +1,6 @@
 resource "aws_wafregional_sql_injection_match_set" "sql_injection" {
 
-  name  = "${var.waf_name}-sql-injection"
+  name  = format("%s-sql-injection", var.waf_name)
 
   sql_injection_match_tuple {
     text_transformation = "URL_DECODE"
@@ -89,14 +89,12 @@ resource "aws_wafregional_sql_injection_match_set" "sql_injection" {
 
 
 resource "aws_wafregional_rule" "sql_injection_rule" {
-
-  depends_on  = ["aws_wafregional_sql_injection_match_set.sql_injection"]
-  name        = "${var.waf_name}-sql-injection-rule"
+  name        = format("%s-sql-injection-rule", var.waf_name)
   metric_name = "SecurityAutomationsSqlInjectionRule"
 
   predicate {
     type    = "SqlInjectionMatch"
-    data_id = "${aws_wafregional_sql_injection_match_set.sql_injection.id}"
+    data_id = aws_wafregional_sql_injection_match_set.sql_injection.id
     negated = false
   }
 }
