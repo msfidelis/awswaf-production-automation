@@ -13,6 +13,14 @@
 
 ![waf](.github/logo.png)
 
+This is an automation purposes to manage v1 WAF rules using terraform. By default all resources are deployed on Regional Mode. But you can enable Global Mode to replicate WAF rules for a cloudfront context.
+
+```hcl
+variable "global_mode" {
+  default = true
+}
+```
+
 ## Features (Roadmap)
 
 *   Feature Flag :x:
