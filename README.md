@@ -16,7 +16,7 @@
 ## Features (Roadmap)
 
 *   Feature Flag :x:
-*   Global Mode Rules Replication from Regional Rules (For Cloudfront)
+*   Global Mode Rules Replication from Regional Rules (For Cloudfront) :x:
 *   Blacklist IP's :white_check_mark:
 *   SQL Injection protection :white_check_mark:
 *   XSS protection :white_check_mark:
