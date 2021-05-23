@@ -25,7 +25,7 @@ variable "global_mode" {
 
 *   Feature Flag :x:
 *   Global Mode Rules Replication from Regional Rules (For Cloudfront) :x:
-*   Blacklist IP's :white_check_mark:
+*   Bad IP's :white_check_mark:
 *   SQL Injection protection :white_check_mark:
 *   XSS protection :white_check_mark:
 *   DDoS protection (IP Rated) :white_check_mark:

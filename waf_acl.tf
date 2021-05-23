@@ -8,7 +8,7 @@ resource "aws_wafregional_web_acl" "WAFWebACL" {
     rule {
         action { type = "BLOCK" }
         priority = 1
-        rule_id  = aws_wafregional_rule.ip_blacklist_rule.id
+        rule_id  = aws_wafregional_rule.bad_ips_rule.id
     }
 
     rule {

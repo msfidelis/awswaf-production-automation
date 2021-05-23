@@ -11,14 +11,14 @@ variable "request_threshold"{
 }
 
 ##################################
-####        Blacklist IP's    ####
+####        Bad IP's    ####
 ##################################
 
-variable "enable_blacklist_rule" {
+variable "enable_bad_ips_rule" {
     default = true
 }
 
-variable "blacklist_ips" {
+variable "bad_ips" {
     type = list
     default = [
         {
